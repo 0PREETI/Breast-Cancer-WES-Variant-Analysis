@@ -1,3 +1,4 @@
+# this is original script of fastp batch processing
 #!/usr/bin/env python
 
 # This script is used to process FASTQ files in a folder in parallel.
