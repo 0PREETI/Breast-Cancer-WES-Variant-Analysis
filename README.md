@@ -170,7 +170,7 @@ bash vep_annotation.sh
 **Preeti Singh Chauhan**  
 M.Sc. Bioinformatics, Savitribai Phule Pune University (SPPU), 2026  
 Pune, Maharashtra, India  
-[LinkedIn](www.linkedin.com/in/preeti18)
+[LinkedIn](https://www.linkedin.com/in/preeti-singh-chauhan-6ba771326/)
 
 ---
 
