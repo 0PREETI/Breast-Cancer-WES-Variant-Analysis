@@ -1,8 +1,7 @@
 #!/bin/bash
 
-# ==============================
 # Paths
-# ==============================
+
 
 INPUT_DIR="/media/preeti-singh-chauhan/Expansion/results/filtered_vcfs/filtered_vcfs"
 ANALYSIS_DIR="/media/preeti-singh-chauhan/Expansion/results/analysis"
@@ -10,9 +9,9 @@ CACHE_DIR="/media/preeti-singh-chauhan/Expansion/vep_cache"
 
 mkdir -p ${ANALYSIS_DIR}
 
-# ==============================
+
 # Loop through all filtered VCFs
-# ==============================
+
 
 for VCF in ${INPUT_DIR}/*.filtered.vcf.gz
 do
@@ -20,9 +19,9 @@ do
 
     echo "Processing ${SAMPLE}..."
 
-    # ----------------------------------
+  
     # Step 1: VEP annotation (VCF output)
-    # ----------------------------------
+ 
 
     vep \
       -i ${VCF} \
@@ -38,9 +37,9 @@ do
 
     tabix -p vcf ${ANALYSIS_DIR}/${SAMPLE}.vep_filtered.vcf.gz
 
-    # ----------------------------------
+   
     # Step 2: Extract PASS variants
-    # ----------------------------------
+
 
     bcftools view -f PASS \
       ${ANALYSIS_DIR}/${SAMPLE}.vep_filtered.vcf.gz \
@@ -48,9 +47,9 @@ do
 
     tabix -p vcf ${ANALYSIS_DIR}/${SAMPLE}.pass.vcf.gz
 
-    # ----------------------------------
+    
     # Step 3: Split multiallelic variants
-    # ----------------------------------
+   
 
     bcftools norm -m -both \
       -Oz -o ${ANALYSIS_DIR}/${SAMPLE}.split.vcf.gz \
@@ -58,9 +57,9 @@ do
 
     tabix -p vcf ${ANALYSIS_DIR}/${SAMPLE}.split.vcf.gz
 
-    # ----------------------------------
+   
     # Step 4: Somatic high-confidence filtering
-    # ----------------------------------
+
 
     bcftools view \
       -i 'FORMAT/AF[1:0] > 0.05 && FORMAT/AF[0:0] < 0.05 && FORMAT/DP[1] > 20' \
@@ -69,9 +68,9 @@ do
 
     tabix -p vcf ${ANALYSIS_DIR}/${SAMPLE}.somatic_highconf.vcf.gz
 
-    # ----------------------------------
+   
     # Step 5: Final VEP (TSV output)
-    # ----------------------------------
+
 
     vep \
       -i ${ANALYSIS_DIR}/${SAMPLE}.somatic_highconf.vcf.gz \
@@ -85,8 +84,6 @@ do
       --force_overwrite
 
     echo "${SAMPLE} completed."
-    echo "----------------------------------"
-
 done
 
 echo "All samples processed successfully!"
