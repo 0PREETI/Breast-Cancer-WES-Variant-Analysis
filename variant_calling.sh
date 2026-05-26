@@ -12,7 +12,7 @@ normal_dir="bam_dir"
 out_dir="mutect2_results"
 mkdir -p "$out_dir"
 
-# Process each tumor–normal pair
+# Process each tumorâ€“normal pair
 for tumor in ${tumor_dir}/*_TS*_RG.bam; do
     tumor_base=$(basename "$tumor" _RG.bam)
 
@@ -45,4 +45,4 @@ for tumor in ${tumor_dir}/*_TS*_RG.bam; do
 
 done
 
-echo "next 16 samples processed successfully!"
+echo "given samples processed successfully!"
