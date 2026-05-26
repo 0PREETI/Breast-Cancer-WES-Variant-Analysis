@@ -2,11 +2,11 @@
 
 A bioinformatics pipeline for identifying somatic variants associated with chemoresistance in Indian breast cancer patients using Whole Exome Sequencing (WES). This repository contains the complete analysis workflow from raw FASTQ to annotated somatic variants.
 
-> ⚠️ **Note:** Raw sequencing data and sample-level results are confidential and not included in this repository. Only the pipeline scripts and workflow documentation are shared.
+> **Note:** Raw sequencing data and sample-level results are confidential and not included in this repository. Only the pipeline scripts and workflow documentation are shared.
 
 ---
 
-## 🧬 Project Overview
+## Project Overview
 
 **Objective:** Identify population-specific somatic variants linked to chemoresistance in Indian breast cancer patients using WES data.
 
@@ -19,7 +19,7 @@ A bioinformatics pipeline for identifying somatic variants associated with chemo
 
 ---
 
-## 🗂️ Repository Structure
+## Repository Structure
 
 ```
 Breast-Cancer-WES-Variant-Analysis/
@@ -39,7 +39,7 @@ Breast-Cancer-WES-Variant-Analysis/
 
 ---
 
-## ⚙️ Pipeline Overview
+## Pipeline Overview
 
 ```
 Raw FASTQ
@@ -83,26 +83,24 @@ Raw FASTQ
 
 ---
 
-## 🛠️ Tools & Requirements
+## Tools & Requirements
 
 | Tool | Version | Purpose |
 |------|---------|---------|
-| FastQC | ≥0.11 | Raw read quality assessment |
-| fastp | ≥0.23 | Read trimming and QC |
-| BWA-MEM | ≥0.7.17 | Reference alignment |
-| SAMtools | ≥1.15 | BAM manipulation |
-| Picard | ≥2.27 | Read group addition |
-| GATK | ≥4.3 | Variant calling & filtering |
-| Ensembl VEP | ≥108 | Variant annotation |
-| bcftools | ≥1.15 | VCF manipulation |
-| Python | ≥3.8 | Parallel QC runner |
-| R | ≥4.2 | Downstream filtering & visualization |
+| FastQC | v0.11.3 | Raw read quality assessment |
+| fastp |  0.23.4 | Read trimming and QC |
+| BWA-MEM | 0.7.17-r1188 | Reference alignment |
+| SAMtools | 1.7 | BAM manipulation |
+| Picard | 2.27.5 | Read group addition |
+| GATK | 4.3.0.0 | Variant calling & filtering |
+| Ensembl VEP | >115 | Variant annotation |
+
 
 **Reference genome:** GRCh38 / hg38
 
 ---
 
-## 🚀 Usage
+## Usage
 
 ### Step 1: Quality Control
 ```bash
@@ -158,25 +156,25 @@ bash vep_annotation.sh
 
 ---
 
-## 📋 Notes
+## Notes
 
-- VEP cache must be downloaded separately: `vep_install -a cf -s homo_sapiens -y GRCh38`
+- VEP cache must be downloaded separately: `for homo_sapiens GRCh38`
 - `parallel.py` automatically detects CPU count and sets parallel workers to `CPU_cores / 4`
 - The somatic high-confidence filter applies: tumor AF > 0.05, normal AF < 0.05, tumor depth > 20
 - Hardcoded paths in all scripts must be updated to match your system before running
 
 ---
 
-## 👩‍💻 Author
+## Author
 
 **Preeti Singh Chauhan**  
 M.Sc. Bioinformatics, Savitribai Phule Pune University (SPPU), 2026  
 Pune, Maharashtra, India  
-[LinkedIn](https://www.linkedin.com/in/preeti-singh-chauhan-6ba771326/)
+[LinkedIn](www.linkedin.com/in/preeti18)
 
 ---
 
-## 📄 License
+## License
 
 Scripts in this repository are shared for educational and reproducibility purposes.  
 Raw data and results are confidential and not included.
