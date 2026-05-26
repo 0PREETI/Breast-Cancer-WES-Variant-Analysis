@@ -1,4 +1,4 @@
-# Breast Cancer WES Pipeline — Chemoresistance Variant Analysis in Indian Tumors
+# Breast Cancer WES Pipeline - Chemoresistance Variant Analysis in Indian Tumors
 
 A bioinformatics pipeline for identifying somatic variants associated with chemoresistance in Indian breast cancer patients using Whole Exome Sequencing (WES). This repository contains the complete analysis workflow from raw FASTQ to annotated somatic variants.
 
@@ -13,9 +13,9 @@ A bioinformatics pipeline for identifying somatic variants associated with chemo
 **Biological Question:** Which somatic variants in Indian breast tumor samples are associated with resistance to chemotherapy, and what are the underlying mechanisms?
 
 **Annotation & population databases used:**
-- [Ensembl VEP](https://www.ensembl.org/vep) — functional annotation (GRCh38 cache, no plugins)
-- [gnomAD](https://gnomad.broadinstitute.org/) — population allele frequencies (via VEP cache)
-- [1000 Genomes Project](https://www.internationalgenome.org/) — global population frequencies (via VEP cache)
+- [Ensembl VEP](https://www.ensembl.org/vep) - functional annotation (GRCh38 cache, no plugins)
+- [gnomAD](https://gnomad.broadinstitute.org/) - population allele frequencies (via VEP cache)
+- [1000 Genomes Project](https://www.internationalgenome.org/) - global population frequencies (via VEP cache)
 
 ---
 
